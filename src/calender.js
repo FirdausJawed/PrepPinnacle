@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import './calendar.css';
 
-const MyCalendar = () => {
+function App() {
       const [date, setDate] = useState(new Date());
 
-      const handleDateChange = (newDate) => {
-            setDate(newDate);
-      };
-
-      const handleDateClick = (clickedDate) => {
-            alert(`You clicked on ${clickedDate}`);
-      };
-
       return (
-            <div className="calendar-container">
-                  <Calendar
-                        onChange={handleDateChange}
-                        value={date}
-                        onClickDay={handleDateClick} // Add this prop to handle date click events
-                  />
+            <div className='cal'>
+                  <h1 className='text-center'>Today</h1>
+                  <div className='calendar-container'>
+                        <Calendar onChange={setDate} value={date} />
+                  </div>
             </div>
       );
-};
+}
 
-export default MyCalendar;
+export default App;
