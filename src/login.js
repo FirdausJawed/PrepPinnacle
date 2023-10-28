@@ -1,48 +1,39 @@
-import React from 'react';
-import './login.css';
+import React, { useState } from "react";
+import "./login.css";
 
-function Login() {
+const Login = () => {
+      const [email, setEmail] = useState("");
+      const [password, setPassword] = useState("");
+
+      const handleSignIn = (e) => {
+            e.preventDefault();
+            // Add your authentication logic here
+            console.log("Email:", email);
+            console.log("Password:", password);
+      };
+
       return (
-            <div className="container">
-                  <input id="signin" type="radio" name="tab" checked="checked" />
-                  <input id="register" type="radio" name="tab" />
-                  <div className="pages">
-                        <div className="page">
-                              <div className="input">
-                                    <div className="title"><i className="material-icons">account_box</i> USERNAME</div>
-                                    <input className="text" type="text" placeholder="" />
-                              </div>
-                              <div className="input">
-                                    <div className="title"><i className="material-icons">lock</i> PASSWORD</div>
-                                    <input className="text" type="password" placeholder="" />
-                              </div>
-                              <div className="input">
-                                    <input type="submit" value="ENTER" />
-                              </div>
-                        </div>
-                        <div className="page signup">
-                              <div className="input">
-                                    <div className="title"><i className="material-icons">person</i> NAME</div>
-                                    <input className="text" type="text" placeholder="" />
-                              </div>
-                              <div className="input">
-                                    <div className="title"><i className="material-icons">markunread_mailbox</i> EMAIL</div>
-                                    <input className="text" type="password" placeholder="" />
-                              </div>
-                              <div className="input">
-                                    <input type="submit" value="SIGN ME UP!" />
-                              </div>
-                        </div>
-                  </div>
-                  <div className="tabs">
-                        <label className="tab text" for="signin">
-                              Sign In</label>
-                        <label className="tab text" for="register">
-                              Register</label>
-                  </div>
+            <div className="signin-container">
+                  <form onSubmit={handleSignIn}>
+                        <h2>Sign In</h2>
+                        <label style={{ color:  '#231E39' }}>Email:</label>
+                        <input
+                              type="email"
+                              value={email}
+                              onChange={(e) => setEmail(e.target.value)}
+                              required
+                        />
+                        <label style={{ color: '#231E39' }}>Password:</label>
+                        <input
+                              type="password"
+                              value={password}
+                              onChange={(e) => setPassword(e.target.value)}
+                              required
+                        />
+                        <button type="submit">Sign In</button>
+                  </form>
             </div>
-
       );
-}
+};
 
 export default Login;
