@@ -1,10 +1,21 @@
 import React from 'react';
 import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Legend, Tooltip, BarElement } from "chart.js";
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+
 import './App.css';
 import Card from './card';
 import Login from './login';
 import MyCalendar from './calender';
+import ModuleStatus from './moduleProgress';
+import StatisticData from './productivity';
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Legend, Tooltip, BarElement);
 
 function App() {
   const user = {
@@ -22,7 +33,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/card" element={<Card user={user} />} />
-          <Route path="/MyCalendar" element={<MyCalendar/>} />
+          <Route path="/MyCalendar" element={<MyCalendar />} />
+          <Route path="/moduleProgress" element={<ModuleStatus />} />
+          <Route path="/productivity" element={<StatisticData />} />
         </Routes>
       </BrowserRouter>
       

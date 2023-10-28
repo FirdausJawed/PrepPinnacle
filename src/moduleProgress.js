@@ -2,7 +2,7 @@ import React from 'react';
 import MPaper from './MPaper';
 import { Box, CircularProgress, Stack, Typography, circularProgressClasses, colors } from '@mui/material';
 
-const toursData = [
+const moduleStatus = [
       {
             title: "Modules Studied",
             value: 390,
@@ -10,12 +10,12 @@ const toursData = [
       },
       {
             title: "Modules Left",
-            value: 190,
+            value: 110,
             color: colors.grey[300]
       }
 ];
 
-const ToursData = () => {
+const ModuleStatus = () => {
       return (
             <MPaper title="Modules Available">
                   <Stack spacing={2}>
@@ -53,7 +53,7 @@ const ToursData = () => {
                               </Box>
                         </Stack>
                         <Stack spacing={1}>
-                              {toursData.map((data, index) => (
+                              {moduleStatus.map((data, index) => (
                                     <Stack key={index} direction="row" justifyContent="space-between">
                                           <Stack direction="row" alignItems="center">
                                                 <Box sx={{
@@ -78,4 +78,4 @@ const ToursData = () => {
       );
 };
 
-export default ToursData;
+export default ModuleStatus;
