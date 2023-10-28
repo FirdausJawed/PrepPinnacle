@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Card from './card';
 import Login from './login';
+import MyCalendar from './calender';
 
 function App() {
   const user = {
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/card" element={<Card user={user} />} />
+          <Route path="/MyCalendar" element={<MyCalendar/>} />
         </Routes>
       </BrowserRouter>
       
