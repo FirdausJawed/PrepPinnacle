@@ -14,7 +14,7 @@ import Login from './login';
 import MyCalendar from './calender';
 import ModuleStatus from './moduleProgress';
 import StatisticData from './productivity';
-import todolist from './todolist/src';
+import App1 from './todolist/App1';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Legend, Tooltip, BarElement);
 
@@ -37,10 +37,10 @@ function App() {
           <Route path="/MyCalendar" element={<MyCalendar />} />
           <Route path="/moduleProgress" element={<ModuleStatus />} />
           <Route path="/productivity" element={<StatisticData />} />
-          <Route path="/todolist" element={<todolistp />} />
+          <Route path="/todolist" element={<App1 />} />
         </Routes>
       </BrowserRouter>
-      
+
     </div>
 
   );
