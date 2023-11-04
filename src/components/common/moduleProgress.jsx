@@ -1,5 +1,5 @@
 import React from 'react';
-import MPaper from './MPaper';
+import MPaper from '../../MPaper';
 import { Box, CircularProgress, Stack, Typography, circularProgressClasses, colors } from '@mui/material';
 
 const moduleStatus = [
@@ -35,7 +35,7 @@ const ModuleStatus = () => {
                                           sx={{
                                                 position: "absolute",
                                                 left: 0,
-                                                color: colors.green[600],
+                                                color:colors.green[600],
                                                 [`& .${circularProgressClasses.circle}`]: {
                                                       strokeLinecap: "round"
                                                 }
@@ -47,7 +47,7 @@ const ModuleStatus = () => {
                                           top: "50%",
                                           transform: "translate(-50%, -50%)"
                                     }}>
-                                          <Typography variant="subtitle2" color={colors.grey[600]}>Modules</Typography>
+                                          <Typography variant="subtitle2" color="primary">Modules</Typography>
                                           <Typography variant="h6">500</Typography>
                                     </Box>
                               </Box>
